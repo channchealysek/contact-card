@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // to use the client folder in server/server.js.
-app.use(express.static('../client/'));
+app.use(express.static('../client/dist/'))
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

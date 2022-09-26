@@ -9,6 +9,7 @@
     "start": "cd server && node server.js",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
+    "heroku-prebuild": "npm install --dev",
     "client": "cd client && npm start"
   },
   "repository": {
@@ -24,5 +25,8 @@
   "homepage": "https://github.com/channchealysek/contact-card#readme",
   "dependencies": {
     "concurrently": "^7.4.0"
+  },
+  "engines": {
+    "node": "v16.14.2"
   }
 }
