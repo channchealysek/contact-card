@@ -9,8 +9,8 @@
     "start": "npm run build && cd server && node server.js",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "heroku-prebuild": "npm install --dev"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,6 @@
     "concurrently": "^7.4.0"
   },
   "engines": {
-    "node": "v16.14.2"
+    "node": "18.x"
   }
 }
