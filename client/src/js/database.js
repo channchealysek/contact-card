@@ -7,12 +7,10 @@ export const initdb = async () =>
     // Add our database schema if it has not already been initialized.
     upgrade(db) {
       if (db.objectStoreNames.contains('contacts')) {
-        console.log('contacts store already exists');
         return;
       }
       // Create a new object store for the data and give it an key name of 'id' which needs to increment automatically.
       db.createObjectStore('contacts', { keyPath: 'id', autoIncrement: true });
-      console.log('contacts store created');
     }
   });
 
@@ -20,7 +18,6 @@ export const initdb = async () =>
 
 // Export a function we will use to GET to the database.
 export const getDb = async () => {
-  console.log('GET from the database');
 
   // Create a connection to the database database and version we want to use.
   const contactDb = await openDB('contact_db', 1);
@@ -36,7 +33,6 @@ export const getDb = async () => {
 
   // Get confirmation of the request.
   const result = await request;
-  console.log('result.value', result);
   return result;
 };
 
@@ -44,7 +40,6 @@ export const getDb = async () => {
 
 // Export a function we will use to POST to the database.
 export const postDb = async (name, email, phone, profile)  => {
-  console.log('Post to the database');
 
   // Create a connection to the database database and version we want to use.
   const contactDb = await openDB('contact_db', 1);
@@ -82,13 +77,11 @@ export const deleteDb = async (id) => {
 
   // Get confirmation of the request.
   const result = await request;
-  console.log('result.value', result);
   return result?.value;
 };
 
 // EXPORTED EDIT function
 export const editDb = async (id, name, email, phone, profile) => {
-  console.log('PUT to the database');
 
   const contactDb = await openDB('contact_db', 1);
 
