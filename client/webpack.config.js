@@ -33,6 +33,9 @@ const path = require('path');
           }
         }
       ]
+    },
+    performance: {
+      hints: false
     }, 
     plugins: [
       new HtmlWebpackPlugin({
