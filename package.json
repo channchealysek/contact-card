@@ -2,6 +2,7 @@
   "name": "contact-card",
   "version": "1.0.0",
   "description": "",
+  "main": "server.js",
   "scripts": {
     "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
