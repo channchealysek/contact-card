@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies.",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server node server.js --ignore client",
+    "server": "cd server node server.js",
     "build": "cd client && npm run build",
-    "client": "cd client && npm start",
-    "heroku-postbuild": "npm run build"
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,10 @@
   },
   "homepage": "https://github.com/channchealysek/contact-card#readme",
   "dependencies": {
-    "concurrently": "^7.4.0",
-    "express": "^4.18.1"
+    "concurrently": "^7.4.0"
+  },
+  "engines": {
+    "node": "^18.x",
+    "npm": "^8.x"
   }
 }
