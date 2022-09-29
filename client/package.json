@@ -5,8 +5,8 @@
   "private": "true",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode development",
-    "start": "webpack --watch",
+    "build": "webpack --mode production",
+    "start": "webpack",
     "heroku-prebuild": "npm install --dev"
   },
   "keywords": [],
